@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Day Planner</title>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container" id="aleph"></div>
+
+    <script type="text/javascript">
+      var fullDate = new Date();
+      
+      var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
+
+      var twoDigitDate = ((fullDate.getDate().length+1) === 1)? (fullDate.getDate()) : '0' + (fullDate.getDate());
+      
+      var currentDate = twoDigitMonth + "/" + twoDigitDate + "/" + fullDate.getFullYear();
+
+      var title = $("<h1>");
+      title.addClass("text-center");
+      title.text("Day Planner");
+      $("#aleph").append(title);
+
+      var date = $("<h5>");
+      date.addClass("text-center");
+      date.text("For the Date " + currentDate);
+      $("#aleph").append(date);
+
+      var enter = $("<br>");
+      $("#aleph").append(enter);
+
+      var horae = $("<ul>");
+      horae.addClass("list-group");
+      horae.attr("id", "beth");
+      $("#aleph").append(horae);
+
+      var iHora = $("<li>");
+      iHora.addClass("list-group-item");
+      iHora.attr("id", "gimel");
+      iHora.text("09:00 AM");
+      $("#beth").append(iHora);
+
+      var buttonGimel = $("<button>");
+      buttonGimel.addClass("btn btn-secondary my-2 my-sm-0 float-right");
+      buttonGimel.attr("type", "submit");
+      buttonGimel.text("Enter");
+      $("#gimel").append(buttonGimel);
+
+
+      var inputGimel = $("<input>");
+      inputGimel.addClass("form-control mr-sm-2 w-75 p-3 float-right");
+      inputGimel.attr("type", "search");
+      inputGimel.attr("id", "lamed");
+      inputGimel.attr("placeholder", localStorage.getItem("lamed"));
+      $("#gimel").append(inputGimel);
+
+      buttonGimel.click(function() {
+        var lamed = $("#lamed").val();
+        localStorage.setItem("lamed", lamed);
+      });
+
+      var iiHora = $("<li>");
+      iiHora.addClass("list-group-item list-group-item-secondary");
+      iiHora.attr("id", "daleth");
+      iiHora.text("10:00 AM");
+      $("#beth").append(iiHora);
+
+      var buttonDaleth = $("<button>");
+      buttonDaleth.addClass("btn btn-secondary my-2 my-sm-0 float-right");
+      buttonDaleth.attr("type", "submit");
+      buttonDaleth.text("Enter");
+      $("#daleth").append(buttonDaleth);
+
+      var inputDaleth = $("<input>");
+      inputDaleth.addClass("form-control mr-sm-2 w-75 p-3 float-right");
+      inputDaleth.attr("type", "search");
+      inputDaleth.attr("id", "mem");
+      inputDaleth.attr("placeholder", localStorage.getItem("mem"));
+      $("#daleth").append(inputDaleth);
+
+      buttonDaleth.click(function() {
+        var mem = $("#mem").val();
+        localStorage.setItem("mem", mem);
+      });
+
+      var iiiHora = $("<li>");
+      iiiHora.addClass("list-group-item");
+      iiiHora.attr("id", "he");
+      iiiHora.text("11:00 AM");
+      $("#beth").append(iiiHora);
+
+      var buttonHe = $("<button>");
+      buttonHe.addClass("btn btn-secondary my-2 my-sm-0 float-right");
+      buttonHe.attr("type", "submit");
+      buttonHe.text("Enter");
+      $("#he").append(buttonHe);
+
+      var inputHe = $("<input>");
+      inputHe.addClass("form-control mr-sm-2 w-75 p-3 float-right");
+      inputHe.attr("type", "search");
+      inputHe.attr("id", "nun");
+      inputHe.attr("placeholder", localStorage.getItem("nun"));
+      $("#he").append(inputHe);
+
+      buttonHe.click(function() {
+        var nun = $("#nun").val();
+        localStorage.setItem("nun", nun);
+      });
+
+      var ivHora = $("<li>");
+      ivHora.addClass("list-group-item list-group-item-secondary");
+      ivHora.attr("id", "vau");
+      ivHora.text("12:00 PM");
+      $("#beth").append(ivHora);
+
+      var buttonVau = $("<button>");
+      buttonVau.addClass("btn btn-secondary my-2 my-sm-0 float-right");
+      buttonVau.attr("type", "submit");
+      buttonVau.text("Enter");
+      $("#vau").append(buttonVau);
+
+      var inputVau = $("<input>");
+      inputVau.addClass("form-control mr-sm-2 w-75 p-3 float-right");
+      inputVau.attr("type", "search");
+      inputVau.attr("id", "samech");
+      inputVau.attr("placeholder", localStorage.getItem("samech"));
+      $("#vau").append(inputVau);
+
+      buttonVau.click(function() {
+        var samech = $("#samech").val();
+        localStorage.setItem("samech", samech)
+      });
+
+      var vHora = $("<li>");
+      vHora.addClass("list-group-item");
+      vHora.attr("id", "zain");
+      vHora.text("01:00 PM");
+      $("#beth").append(vHora);
+
+      var buttonZain = $("<button>");
+      buttonZain.addClass("btn btn-secondary my-2 my-sm-0 float-right");
+      buttonZain.attr("type", "submit");
+      buttonZain.text("Enter");
+      $("#zain").append(buttonZain);
+
+      var inputZain = $("<input>");
+      inputZain.addClass("form-control mr-sm-2 w-75 p-3 float-right");
+      inputZain.attr("type", "search");
+      inputZain.attr("id", "ain");
+      inputZain.attr("placeholder", localStorage.getItem("ain"));
+      $("#zain").append(inputZain);
+
+      buttonZain.click(function() {
+        var ain = $("#ain").val();
+        localStorage.setItem("ain", ain);
+      });
+
+      var viHora = $("<li>");
+      viHora.addClass("list-group-item list-group-item-secondary");
+      viHora.attr("id", "cheth");
+      viHora.text("02:00 PM");
+      $("#beth").append(viHora);
+
+      var buttonCheth = $("<button>");
+      buttonCheth.addClass("btn btn-secondary my-2 my-sm-0 float-right");
+      buttonCheth.attr("type", "submit");
+      buttonCheth.text("Enter");
+      $("#cheth").append(buttonCheth);
+
+      var inputCheth = $("<input>");
+      inputCheth.addClass("form-control mr-sm-2 w-75 p-3 float-right");
+      inputCheth.attr("type", "search");
+      inputCheth.attr("id", "pe");
+      inputCheth.attr("placeholder", localStorage.getItem("pe"));
+      $("#cheth").append(inputCheth);
+
+      buttonCheth.click(function() {
+        var pe = $("#pe").val();
+        localStorage.setItem("pe", pe);
+      });
+
+      var viiHora = $("<li>");
+      viiHora.addClass("list-group-item");
+      viiHora.attr("id", "theth");
+      viiHora.text("03:00 PM");
+      $("#beth").append(viiHora);
+
+      var buttonTheth = $("<button>");
+      buttonTheth.addClass("btn btn-secondary my-2 my-sm-0 float-right");
+      buttonTheth.attr("type", "submit");
+      buttonTheth.text("Enter");
+      $("#theth").append(buttonTheth);
+
+      var inputTheth = $("<input>");
+      inputTheth.addClass("form-control mr-sm-2 w-75 p-3 float-right");
+      inputTheth.attr("type", "search");
+      inputTheth.attr("id", "zade");
+      inputTheth.attr("placeholder", localStorage.getItem("zade"));
+      $("#theth").append(inputTheth);
+
+      buttonTheth.click(function() {
+        var zade = $("#zade").val();
+        localStorage.setItem("zade", zade);
+      });
+
+      var viiiHora = $("<li>");
+      viiiHora.addClass("list-group-item list-group-item-secondary");
+      viiiHora.attr("id", "iod");
+      viiiHora.text("04:00 PM");
+      $("#beth").append(viiiHora);
+
+      var buttonIod = $("<button>");
+      buttonIod.addClass("btn btn-secondary my-2 my-sm-0 float-right");
+      buttonIod.attr("type", "submit");
+      buttonIod.text("Enter");
+      $("#iod").append(buttonIod);
+
+      var inputIod = $("<input>");
+      inputIod.addClass("form-control mr-sm-2 w-75 p-3 float-right");
+      inputIod.attr("type", "search");
+      inputIod.attr("id", "kuff");
+      inputIod.attr("placeholder", localStorage.getItem("kuff"));
+      $("#iod").append(inputIod);
+
+      buttonIod.click(function() {
+        var kuff = $("#kuff").val();
+        localStorage.setItem("kuff", kuff);
+      });
+
+      var ixHora = $("<li>");
+      ixHora.addClass("list-group-item");
+      ixHora.attr("id", "caph");
+      ixHora.text("05:00 PM");
+      $("#beth").append(ixHora);
+
+      var buttonCaph = $("<button>");
+      buttonCaph.addClass("btn btn-secondary my-2 my-sm-0 float-right");
+      buttonCaph.attr("type", "submit");
+      buttonCaph.text("Enter");
+      $("#caph").append(buttonCaph);
+
+      var inputCaph = $("<input>");
+      inputCaph.addClass("form-control mr-sm-2 w-75 p-3 float-right");
+      inputCaph.attr("type", "search");
+      inputCaph.attr("id", "res");
+      inputCaph.attr("placeholder", localStorage.getItem("res"));
+      $("#caph").append(inputCaph);
+
+      buttonCaph.click(function() {
+        var res = $("#res").val();
+        localStorage.setItem("res", res);
+      });
+
+      // Shin
+      // Tau
+    </script>
+    <br/>
+    <h1></h1>
+  </body>
+</html>
